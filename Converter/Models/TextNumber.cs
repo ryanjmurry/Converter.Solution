@@ -131,9 +131,14 @@ namespace Converter.Models
             return _dictionaryList;
         }
 
-        public int GetLastNumber()
+        public int GetLastDigit()
         {
             return _number % 10;
+        }
+
+        public int RemoveLastDigit()
+        {
+            return _number /= 10;
         }
     }
 }

@@ -36,5 +36,21 @@ namespace Converter.Tests
             List<Dictionary<int, string>> newList = newTextNumber.GetDictionaryList();
             CollectionAssert.AreEqual(newDictionary, newList[0]);
         }
+
+        [TestMethod]
+        public void GetLastDigit_GetLastDigitOfNumber_Int()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("15");
+            Assert.AreEqual(5, newTextNumber.GetLastDigit());
+        }
+
+        [TestMethod]
+        public void RemoveLastDigit_RemoveLastDigitOfNumber_Int()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("15");
+            Assert.AreEqual(1, newTextNumber.RemoveLastDigit());
+        }
     }
 }
