@@ -7,7 +7,8 @@ namespace Converter.Models
     {
         private int _number;
         private int _lastDigit;
-        private int _placeValuePosition = 3;
+        private int _placeValuePositionCounter = 3;
+        private int _placeValuePosition = -1;
         private int _periodModifier = 0;
         private Dictionary<int, string> _onesDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _teensDictionary = new Dictionary<int, string>() { };
@@ -145,10 +146,26 @@ namespace Converter.Models
             return _number /= 10;
         }
 
-        // public string GetNumberText()
-        // {
-        //     this.GetLastDigit();
-        //
-        // }
+        public string GetNumberText()
+        {
+            this.CreateAllDictionaries();
+            return _onesDictionary[this.GetLastDigit()];
+        }
+
+        public void UpdatePlaceValuePosition()
+        {
+            _placeValuePosition = _placeValuePositionCounter % 3;
+            _placeValuePositionCounter++;
+        }
+
+        public int CycleValuePosition()
+        {
+            while (_number > 0)
+            {
+                this.RemoveLastDigit();
+                this.UpdatePlaceValuePosition();
+            }
+            return _placeValuePosition;
+        }
     }
 }

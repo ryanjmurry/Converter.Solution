@@ -52,5 +52,37 @@ namespace Converter.Tests
             newTextNumber.SetNumber("15");
             Assert.AreEqual(1, newTextNumber.RemoveLastDigit());
         }
+
+        [TestMethod]
+        public void GetNumberText_GetTextOfLastDigitInNumber_String()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("15");
+            Assert.AreEqual("five", newTextNumber.GetNumberText());
+        }
+
+        [TestMethod]
+        public void CycleThroughList_CyclesToZeroPosition_Int()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("1111");
+            Assert.AreEqual(0, newTextNumber.CycleValuePosition());
+        }
+
+        [TestMethod]
+        public void CycleThroughList_CyclesToFirstPosition_Int()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("11111");
+            Assert.AreEqual(1, newTextNumber.CycleValuePosition());
+        }
+
+        [TestMethod]
+        public void CycleThroughList_CyclesToSecondPosition_Int()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("111111");
+            Assert.AreEqual(2, newTextNumber.CycleValuePosition());
+        }
     }
 }
