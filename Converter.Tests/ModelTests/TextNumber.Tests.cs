@@ -136,6 +136,16 @@ namespace Converter.Tests
             CollectionAssert.AreEqual(newList, result);
         }
 
+        [TestMethod]
+        public void SetGetFinalText_SetAndGetFinalText_String()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.MakeTextList("7125");
+            newTextNumber.SetFinalText();
+            string result = newTextNumber.GetFinalText();
+            Assert.AreEqual("seven one hundred twenty five", result);
+        }
+
 
 
 

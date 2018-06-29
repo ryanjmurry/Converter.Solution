@@ -11,6 +11,7 @@ namespace Converter.Models
         private int _placeValuePosition = 0;
         private int _periodModifier = 0;
         private string _numberText;
+        private string _finalText;
         private Dictionary<int, string> _currentDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _onesDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _teensDictionary = new Dictionary<int, string>() { };
@@ -218,6 +219,12 @@ namespace Converter.Models
             return _textList;
         }
 
+        public void UpdateNumberAndPosition()
+        {
+            this.RemoveLastDigit();
+            this.UpdatePlaceValuePosition();
+        }
+
 
 
         public List<string> MakeTextList(string numberString)
@@ -226,10 +233,20 @@ namespace Converter.Models
             while (_number > 0)
             {
                 this.AddTextToList();
-                this.RemoveLastDigit();
-                this.UpdatePlaceValuePosition();
+                this.UpdateNumberAndPosition();
             }
             return _textList;
+        }
+
+        public void SetFinalText()
+        {
+            _textList.Reverse();
+            _finalText = String.Join(" ", _textList);
+        }
+
+        public string GetFinalText()
+        {
+            return _finalText;
         }
 
 
