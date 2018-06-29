@@ -27,6 +27,26 @@ namespace Converter.Models
             return _number;
         }
 
+        public int GetLastDigit()
+        {
+            return _lastDigit;
+        }
+
+        public int GetPlaceValuePositionCounter()
+        {
+            return _placeValuePositionCounter;
+        }
+
+        public int GetPlaceValuePosition()
+        {
+            return _placeValuePosition;
+        }
+
+        public int GetPeriodModifier()
+        {
+            return _periodModifier;
+        }
+
         public void CreateOnesDictionary()
         {
             _onesDictionary[1] = "one";
@@ -146,26 +166,22 @@ namespace Converter.Models
             return _number /= 10;
         }
 
-        public string GetNumberText()
-        {
-            this.CreateAllDictionaries();
-            return _onesDictionary[this.GetLastDigit()];
-        }
-
         public void UpdatePlaceValuePosition()
         {
             _placeValuePosition = _placeValuePositionCounter % 3;
             _placeValuePositionCounter++;
         }
 
-        public int CycleValuePosition()
+        public int ValuePosition()
         {
-            while (_number > 0)
-            {
-                this.RemoveLastDigit();
-                this.UpdatePlaceValuePosition();
-            }
+            this.UpdatePlaceValuePosition();
             return _placeValuePosition;
         }
+
+        // public Dictionary<int, string> GetPositionValueDictionary()
+        // {
+        //     this.AddDictionariesToList();
+        //     return _dictionaryList[this.CycleValuePosition()];
+        // }
     }
 }
