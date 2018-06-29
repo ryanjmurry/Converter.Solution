@@ -10,6 +10,7 @@ namespace Converter.Models
         private int _placeValuePositionCounter = 3;
         private int _placeValuePosition = 0;
         private int _periodModifier = 0;
+        private Dictionary<int, string> _currentDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _onesDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _teensDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _tensDictionary = new Dictionary<int, string>() { };
@@ -173,6 +174,24 @@ namespace Converter.Models
             this.AddDictionariesToList();
             return _dictionaryList[this.GetPlaceValuePosition()];
         }
+
+        public void SetCurrentDictionary()
+        {
+            _currentDictionary = this.GetPlaceValueDictionary();
+        }
+
+        public Dictionary<int, string> GetCurrentDictionary()
+        {
+            return _currentDictionary;
+        }
+
+        // public string GetTextFromDictionary(int number)
+        // {
+        //     this.GetPlaceValueDictionary();
+        //
+        // }
+
+
 
 
 

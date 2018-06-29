@@ -96,6 +96,16 @@ namespace Converter.Tests
             CollectionAssert.AreEqual(newList[0], newDictionary);
         }
 
-        
+        [TestMethod]
+        public void SetCurrentDictionary_SetCurrentDictionary_Dictionary()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetCurrentDictionary();
+            CollectionAssert.AreEqual(newTextNumber.GetOnesDictionary(), newTextNumber.GetCurrentDictionary());
+        }
+
+
+
+
     }
 }
