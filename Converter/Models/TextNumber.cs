@@ -41,6 +41,10 @@ namespace Converter.Models
             return _onesDictionary[number];
         }
 
+        public Dictionary<int, string> GetOnesDictionary()
+        {
+            return _onesDictionary;
+        }
 
         public void CreateTeensDictionary()
         {
@@ -73,6 +77,11 @@ namespace Converter.Models
             _tensDictionary[9] = "ninety";
         }
 
+        public Dictionary<int, string> GetTensDictionary()
+        {
+            return _tensDictionary;
+        }
+
         public string GetTensValue(int number)
         {
             return _tensDictionary[number];
@@ -91,6 +100,11 @@ namespace Converter.Models
             _hundredsDictionary[9] = "nine hundred";
         }
 
+        public Dictionary<int, string> GetHundredsDictionary()
+        {
+            return _hundredsDictionary;
+        }
+
         public string GetHundredsValue(int number)
         {
             return _hundredsDictionary[number];
@@ -107,12 +121,19 @@ namespace Converter.Models
         public void AddDictionariesToList()
         {
             this.CreateAllDictionaries();
-            _dictionaryList[0] = _onesDictionary;
-            _dictionary[1] = _tensDictionary;
-            _dictionary[2] = _hundredsDictionary;
+            _dictionaryList.Add(_onesDictionary);
+            _dictionaryList.Add(_tensDictionary);
+            _dictionaryList.Add(_hundredsDictionary);
         }
 
+        public List<Dictionary<int, string>> GetDictionaryList()
+        {
+            return _dictionaryList;
+        }
 
-
+        public int GetLastNumber()
+        {
+            return _number % 10;
+        }
     }
 }

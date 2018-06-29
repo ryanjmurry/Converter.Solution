@@ -26,5 +26,15 @@ namespace Converter.Tests
             Assert.AreEqual("ten", newTextNumber.GetTensValue(1));
             Assert.AreEqual("one hundred", newTextNumber.GetHundredsValue(1));
         }
+
+        [TestMethod]
+        public void AddDictionariesToList_AddDictionariesToList_Dictionary()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.AddDictionariesToList();
+            Dictionary<int, string> newDictionary = newTextNumber.GetOnesDictionary();
+            List<Dictionary<int, string>> newList = newTextNumber.GetDictionaryList();
+            CollectionAssert.AreEqual(newDictionary, newList[0]);
+        }
     }
 }
