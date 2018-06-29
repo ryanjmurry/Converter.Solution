@@ -38,10 +38,11 @@ namespace Converter.Tests
         }
 
         [TestMethod]
-        public void GetLastDigit_GetLastDigitOfNumber_Int()
+        public void SetGetLastDigit_SetAndGetLastDigitOfNumber_Int()
         {
             TextNumber newTextNumber = new TextNumber();
             newTextNumber.SetNumber("15");
+            newTextNumber.SetLastDigit();
             Assert.AreEqual(5, newTextNumber.GetLastDigit());
         }
 
@@ -54,10 +55,10 @@ namespace Converter.Tests
         }
 
         [TestMethod]
-        public void GetPlaceValuePosition_UpdatePlaceValuePosition_Int()
+        public void SetGetPlaceValuePosition_SetAndGetPlaceValuePosition_Int()
         {
             TextNumber newTextNumber = new TextNumber();
-            newTextNumber.GetPlaceValuePosition();
+            newTextNumber.SetPlaceValuePosition();
             Assert.AreEqual(0, newTextNumber.GetPlaceValuePosition());
         }
 
@@ -102,6 +103,16 @@ namespace Converter.Tests
             TextNumber newTextNumber = new TextNumber();
             newTextNumber.SetCurrentDictionary();
             CollectionAssert.AreEqual(newTextNumber.GetOnesDictionary(), newTextNumber.GetCurrentDictionary());
+        }
+
+        [TestMethod]
+        public void SetGetNumberText_SetAndGetNumberText_String()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("15");
+            newTextNumber.SetNumberText();
+            string newText = newTextNumber.GetNumberText();
+            Assert.AreEqual("five", newText);
         }
 
 

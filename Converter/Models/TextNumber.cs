@@ -10,6 +10,7 @@ namespace Converter.Models
         private int _placeValuePositionCounter = 3;
         private int _placeValuePosition = 0;
         private int _periodModifier = 0;
+        private string _numberText;
         private Dictionary<int, string> _currentDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _onesDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _teensDictionary = new Dictionary<int, string>() { };
@@ -17,6 +18,7 @@ namespace Converter.Models
         private Dictionary<int, string> _hundredsDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _modifierDictionary = new Dictionary<int, string>() { };
         private List<Dictionary<int, string>> _dictionaryList = new List<Dictionary<int, string>>() { };
+        private List<string> _textList = new List<string>() { };
 
         public void SetNumber(string number)
         {
@@ -136,9 +138,13 @@ namespace Converter.Models
             return _dictionaryList;
         }
 
-        public int GetLastDigit()
+        public void SetLastDigit()
         {
             _lastDigit = _number % 10;
+        }
+
+        public int GetLastDigit()
+        {
             return _lastDigit;
         }
 
@@ -149,8 +155,12 @@ namespace Converter.Models
 
         public int GetPlaceValuePosition()
         {
-            _placeValuePosition = _placeValuePositionCounter % 3;
             return _placeValuePosition;
+        }
+
+        public void SetPlaceValuePosition()
+        {
+            _placeValuePosition = _placeValuePositionCounter % 3;
         }
 
         public void IncrementPlaceValuePositionCounter()
@@ -163,10 +173,10 @@ namespace Converter.Models
             return _placeValuePositionCounter;
         }
 
-        public int UpdatePlaceValuePosition()
+        public void UpdatePlaceValuePosition()
         {
             this.IncrementPlaceValuePositionCounter();
-            return this.GetPlaceValuePosition();
+            this.SetPlaceValuePosition();
         }
 
         public Dictionary<int, string> GetPlaceValueDictionary()
@@ -185,9 +195,34 @@ namespace Converter.Models
             return _currentDictionary;
         }
 
+        public void SetNumberText()
+        {
+            this.SetCurrentDictionary();
+            this.SetLastDigit();
+            _numberText = _currentDictionary[this.GetLastDigit()];
+        }
+
+        public string GetNumberText()
+        {
+            return _numberText;
+        }
+
+        public void AddTextToList()
+        {
+            _textList.Add(this.SetNumberText());
+        }
+
+        public List<string> GetTextList()
+        {
+            return _textList();
+        }
+
+
+
+
+        //
         // public string GetTextFromDictionary(int number)
         // {
-        //     this.GetPlaceValueDictionary();
         //
         // }
 
