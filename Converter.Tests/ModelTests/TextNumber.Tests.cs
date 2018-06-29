@@ -21,10 +21,14 @@ namespace Converter.Tests
         {
             TextNumber newTextNumber = new TextNumber();
             newTextNumber.CreateAllDictionaries();
-            Assert.AreEqual("one", newTextNumber.GetOnesValue(1));
-            Assert.AreEqual("eleven", newTextNumber.GetTeensValue(1));
-            Assert.AreEqual("ten", newTextNumber.GetTensValue(1));
-            Assert.AreEqual("one hundred", newTextNumber.GetHundredsValue(1));
+            Dictionary<int, string> onesDictionary = newTextNumber.GetOnesDictionary();
+            Dictionary<int, string> teensDictionary = newTextNumber.GetTeensDictionary();
+            Dictionary<int, string> tensDictionary = newTextNumber.GetTensDictionary();
+            Dictionary<int, string> hundredsDictionary = newTextNumber.GetHundredsDictionary();
+            Assert.AreEqual("one", onesDictionary[1]);
+            Assert.AreEqual("eleven", teensDictionary[1]);
+            Assert.AreEqual("ten", tensDictionary[1]);
+            Assert.AreEqual("one hundred", hundredsDictionary[1]);
         }
 
         [TestMethod]
@@ -144,6 +148,14 @@ namespace Converter.Tests
             newTextNumber.SetFinalText();
             string result = newTextNumber.GetFinalText();
             Assert.AreEqual("seven one hundred twenty five", result);
+        }
+
+        [TestMethod]
+        public void IncrementPeriodModifier_IncrementPeriodModifierByOne_Int()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.IncrementPeriodModifier();
+            Assert.AreEqual(1, newTextNumber.GetPeriodModifier());
         }
 
 

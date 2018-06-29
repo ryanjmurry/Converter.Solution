@@ -5,6 +5,7 @@ namespace Converter.Models
 {
     public class TextNumber
     {
+        // public string _stringNumber;
         private int _number;
         private int _lastDigit;
         private int _placeValuePositionCounter = 3;
@@ -20,6 +21,22 @@ namespace Converter.Models
         private Dictionary<int, string> _modifierDictionary = new Dictionary<int, string>() { };
         private List<Dictionary<int, string>> _dictionaryList = new List<Dictionary<int, string>>() { };
         private List<string> _textList = new List<string>() { };
+
+
+        //More to try later
+
+        //__________________________________________//
+        // public TextNumber (string stringNumber)
+        // {
+        //     _stringNumber = stringNumber;
+        // }
+        //
+        // public int Number
+        // {
+        //     get { return _number; }
+        //     set { _number = int.Parse(_stringNumber); }
+        //
+        // }
 
         public void SetNumber(string number)
         {
@@ -67,9 +84,9 @@ namespace Converter.Models
             _teensDictionary[9] = "nineteen";
         }
 
-        public string GetTeensValue(int number)
+        public Dictionary<int, string> GetTeensDictionary()
         {
-            return _teensDictionary[number];
+            return _teensDictionary;
         }
 
         public void CreateTensDictionary()
@@ -90,11 +107,6 @@ namespace Converter.Models
             return _tensDictionary;
         }
 
-        public string GetTensValue(int number)
-        {
-            return _tensDictionary[number];
-        }
-
         public void CreateHundredsDictionary()
         {
             _hundredsDictionary[1] = "one hundred";
@@ -113,9 +125,18 @@ namespace Converter.Models
             return _hundredsDictionary;
         }
 
-        public string GetHundredsValue(int number)
+        public void CreateModifierDictionary()
         {
-            return _hundredsDictionary[number];
+            _modifierDictionary[1] = "";
+            _modifierDictionary[2] = "thousand";
+            _modifierDictionary[3] = "million";
+            _modifierDictionary[4] = "billion";
+            _modifierDictionary[5] = "trillion";
+        }
+
+        public Dictionary<int, string> GetModifierDictionary()
+        {
+            return _modifierDictionary;
         }
 
         public void CreateAllDictionaries()
@@ -124,6 +145,7 @@ namespace Converter.Models
             this.CreateTeensDictionary();
             this.CreateTensDictionary();
             this.CreateHundredsDictionary();
+            this.CreateModifierDictionary();
         }
 
         public void AddDictionariesToList()
@@ -225,7 +247,15 @@ namespace Converter.Models
             this.UpdatePlaceValuePosition();
         }
 
+        public void IncrementPeriodModifier()
+        {
+            _periodModifier++;
+        }
 
+        public int GetPeriodModifier()
+        {
+            return _periodModifier;
+        }
 
         public List<string> MakeTextList(string numberString)
         {
@@ -248,26 +278,5 @@ namespace Converter.Models
         {
             return _finalText;
         }
-
-
-
-
-
-
-        //
-        // public string GetTextFromDictionary(int number)
-        // {
-        //
-        // }
-
-
-
-
-
-        // public Dictionary<int, string> GetPositionValueDictionary()
-        // {
-        //     this.AddDictionariesToList();
-        //     return _dictionaryList[this.CycleValuePosition()];
-        // }
     }
 }
