@@ -209,13 +209,16 @@ namespace Converter.Models
 
         public void AddTextToList()
         {
-            _textList.Add(this.SetNumberText());
+            this.SetNumberText();
+            _textList.Add(this.GetNumberText());
         }
 
         public List<string> GetTextList()
         {
-            return _textList();
+            return _textList;
         }
+
+        
 
 
 

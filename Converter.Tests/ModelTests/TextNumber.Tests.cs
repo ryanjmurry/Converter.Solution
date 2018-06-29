@@ -115,6 +115,16 @@ namespace Converter.Tests
             Assert.AreEqual("five", newText);
         }
 
+        [TestMethod]
+        public void AddTextToList_AddNumberTextToList_String()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.SetNumber("15");
+            newTextNumber.AddTextToList();
+            List<string> newList = newTextNumber.GetTextList();
+            Assert.AreEqual("five", newList[0]);
+        }
+
 
 
 
