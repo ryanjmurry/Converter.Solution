@@ -1,0 +1,8 @@
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/bin/Debug/netcoreapp1.1/Converter.deps.json
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/bin/Debug/netcoreapp1.1/Converter.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/bin/Debug/netcoreapp1.1/Converter.pdb
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/obj/Debug/netcoreapp1.1/Converter.csproj.CoreCompileInputs.cache
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/obj/Debug/netcoreapp1.1/Converter.AssemblyInfoInputs.cache
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/obj/Debug/netcoreapp1.1/Converter.AssemblyInfo.cs
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/obj/Debug/netcoreapp1.1/Converter.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter/obj/Debug/netcoreapp1.1/Converter.pdb

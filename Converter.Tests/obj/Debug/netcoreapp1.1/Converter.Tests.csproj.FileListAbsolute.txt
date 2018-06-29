@@ -1,0 +1,15 @@
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/obj/Debug/netcoreapp1.1/Converter.Tests.csproj.CoreCompileInputs.cache
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/obj/Debug/netcoreapp1.1/Converter.Tests.AssemblyInfoInputs.cache
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/obj/Debug/netcoreapp1.1/Converter.Tests.AssemblyInfo.cs
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Converter.Tests.deps.json
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Converter.Tests.runtimeconfig.json
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Converter.Tests.runtimeconfig.dev.json
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Converter.Tests.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Converter.Tests.pdb
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Converter.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/bin/Debug/netcoreapp1.1/Converter.pdb
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/obj/Debug/netcoreapp1.1/Converter.Tests.dll
+/Users/ryanmurry/Desktop/epicodus/C#/Converter.Solution/Converter.Tests/obj/Debug/netcoreapp1.1/Converter.Tests.pdb
