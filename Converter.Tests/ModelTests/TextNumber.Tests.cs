@@ -116,13 +116,24 @@ namespace Converter.Tests
         }
 
         [TestMethod]
-        public void AddTextToList_AddNumberTextToList_String()
+        public void AddTextToList_AddNumberTextToList_List()
         {
             TextNumber newTextNumber = new TextNumber();
             newTextNumber.SetNumber("15");
             newTextNumber.AddTextToList();
-            List<string> newList = newTextNumber.GetTextList();
-            Assert.AreEqual("five", newList[0]);
+            List<string> result = newTextNumber.GetTextList();
+            List<string> newList = new List<string>() { "five" };
+            CollectionAssert.AreEqual(newList, result);
+        }
+
+        [TestMethod]
+        public void MakeTextList_CreateListOfTextFromNumber_List()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            newTextNumber.MakeTextList("7125");
+            List<string> result = newTextNumber.GetTextList();
+            List<string> newList = new List<string>() { "five", "twenty", "one hundred", "seven" };
+            CollectionAssert.AreEqual(newList, result);
         }
 
 

@@ -218,7 +218,21 @@ namespace Converter.Models
             return _textList;
         }
 
-        
+
+
+        public List<string> MakeTextList(string numberString)
+        {
+            this.SetNumber(numberString);
+            while (_number > 0)
+            {
+                this.AddTextToList();
+                this.RemoveLastDigit();
+                this.UpdatePlaceValuePosition();
+            }
+            return _textList;
+        }
+
+
 
 
 
