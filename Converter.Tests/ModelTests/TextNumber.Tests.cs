@@ -54,35 +54,48 @@ namespace Converter.Tests
         }
 
         [TestMethod]
-        public void GetNumberText_GetTextOfLastDigitInNumber_String()
+        public void GetPlaceValuePosition_UpdatePlaceValuePosition_Int()
         {
             TextNumber newTextNumber = new TextNumber();
-            newTextNumber.SetNumber("15");
-            Assert.AreEqual("five", newTextNumber.GetNumberText());
+            newTextNumber.GetPlaceValuePosition();
+            Assert.AreEqual(0, newTextNumber.GetPlaceValuePosition());
         }
 
         [TestMethod]
-        public void CycleThroughList_CyclesToZeroPosition_Int()
+        public void IncrementPlaceValuePositionCounter_IncrementPlaceValuePositionCounterByOne_Int()
         {
             TextNumber newTextNumber = new TextNumber();
-            newTextNumber.SetNumber("1111");
-            Assert.AreEqual(0, newTextNumber.CycleValuePosition());
+            newTextNumber.IncrementPlaceValuePositionCounter();
+            Assert.AreEqual(4, newTextNumber.GetPlaceValuePositionCounter());
         }
 
         [TestMethod]
-        public void CycleThroughList_CyclesToFirstPosition_Int()
+        public void UpdatePlaceValuePosition_UpdatePlaceValuePosition_Int()
         {
             TextNumber newTextNumber = new TextNumber();
-            newTextNumber.SetNumber("11111");
-            Assert.AreEqual(1, newTextNumber.CycleValuePosition());
+            newTextNumber.UpdatePlaceValuePosition();
+            Assert.AreEqual(1, newTextNumber.GetPlaceValuePosition());
         }
 
         [TestMethod]
-        public void CycleThroughList_CyclesToSecondPosition_Int()
+        public void UpdatePlaceValuePosition_CyclesPlaceValuePosition_Int()
         {
             TextNumber newTextNumber = new TextNumber();
-            newTextNumber.SetNumber("111111");
-            Assert.AreEqual(2, newTextNumber.CycleValuePosition());
+            newTextNumber.UpdatePlaceValuePosition();
+            newTextNumber.UpdatePlaceValuePosition();
+            newTextNumber.UpdatePlaceValuePosition();
+            Assert.AreEqual(0, newTextNumber.GetPlaceValuePosition());
         }
+
+        [TestMethod]
+        public void GetPlaceValueDictionary_GetsPlaceValueDictionary_Dictionary()
+        {
+            TextNumber newTextNumber = new TextNumber();
+            List<Dictionary<int, string>> newList = newTextNumber.GetDictionaryList();
+            Dictionary<int, string> newDictionary = newTextNumber.GetPlaceValueDictionary();
+            CollectionAssert.AreEqual(newList[0], newDictionary);
+        }
+
+        
     }
 }

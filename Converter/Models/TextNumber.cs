@@ -8,7 +8,7 @@ namespace Converter.Models
         private int _number;
         private int _lastDigit;
         private int _placeValuePositionCounter = 3;
-        private int _placeValuePosition = -1;
+        private int _placeValuePosition = 0;
         private int _periodModifier = 0;
         private Dictionary<int, string> _onesDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _teensDictionary = new Dictionary<int, string>() { };
@@ -25,26 +25,6 @@ namespace Converter.Models
         public int GetNumber()
         {
             return _number;
-        }
-
-        public int GetLastDigit()
-        {
-            return _lastDigit;
-        }
-
-        public int GetPlaceValuePositionCounter()
-        {
-            return _placeValuePositionCounter;
-        }
-
-        public int GetPlaceValuePosition()
-        {
-            return _placeValuePosition;
-        }
-
-        public int GetPeriodModifier()
-        {
-            return _periodModifier;
         }
 
         public void CreateOnesDictionary()
@@ -166,17 +146,35 @@ namespace Converter.Models
             return _number /= 10;
         }
 
-        public void UpdatePlaceValuePosition()
+        public int GetPlaceValuePosition()
         {
             _placeValuePosition = _placeValuePositionCounter % 3;
+            return _placeValuePosition;
+        }
+
+        public void IncrementPlaceValuePositionCounter()
+        {
             _placeValuePositionCounter++;
         }
 
-        public int ValuePosition()
+        public int GetPlaceValuePositionCounter()
         {
-            this.UpdatePlaceValuePosition();
-            return _placeValuePosition;
+            return _placeValuePositionCounter;
         }
+
+        public int UpdatePlaceValuePosition()
+        {
+            this.IncrementPlaceValuePositionCounter();
+            return this.GetPlaceValuePosition();
+        }
+
+        public Dictionary<int, string> GetPlaceValueDictionary()
+        {
+            this.AddDictionariesToList();
+            return _dictionaryList[this.GetPlaceValuePosition()];
+        }
+
+
 
         // public Dictionary<int, string> GetPositionValueDictionary()
         // {
