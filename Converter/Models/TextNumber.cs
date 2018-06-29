@@ -6,6 +6,9 @@ namespace Converter.Models
     public class TextNumber
     {
         private int _number;
+        private int _lastDigit;
+        private int _placeValuePosition = 3;
+        private int _periodModifier = 0;
         private Dictionary<int, string> _onesDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _teensDictionary = new Dictionary<int, string>() { };
         private Dictionary<int, string> _tensDictionary = new Dictionary<int, string>() { };
@@ -133,12 +136,19 @@ namespace Converter.Models
 
         public int GetLastDigit()
         {
-            return _number % 10;
+            _lastDigit = _number % 10;
+            return _lastDigit;
         }
 
         public int RemoveLastDigit()
         {
             return _number /= 10;
         }
+
+        // public string GetNumberText()
+        // {
+        //     this.GetLastDigit();
+        //
+        // }
     }
 }
